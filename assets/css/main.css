@@ -131,14 +131,59 @@ body {
     body header .sidebar {
       width: 300px;
       margin-top: 44px;
-      padding: 32px 0 0 4px; }
+      padding-top: 32px; }
       body header .sidebar .plan-nav {
-        font-size: 16px; }
+        font-size: 16px;
+        padding-left: 4px; }
         body header .sidebar .plan-nav .menu-icon {
           width: 44px;
           height: 44px;
           line-height: 44px;
           text-align: center;
           display: inline-block; }
+      body header .sidebar .task-nav {
+        margin: 0 auto; }
+        body header .sidebar .task-nav .task-group {
+          transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          font-size: 14px;
+          text-align: center;
+          font-weight: normal;
+          display: inline-block;
+          width: 33%;
+          margin-right: -4px;
+          border-bottom: 1px solid #dedede; }
+          body header .sidebar .task-nav .task-group:last-child {
+            margin-right: 0; }
+          body header .sidebar .task-nav .task-group:hover, body header .sidebar .task-nav .task-group:active, body header .sidebar .task-nav .task-group:focus {
+            border-color: #888; }
+        body header .sidebar .task-nav .task-radio {
+          display: none; }
+        body header .sidebar .task-nav .task-radio:checked + label {
+          border-color: #888; }
+      body header .sidebar .task-section {
+        transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        display: none;
+        height: 1px;
+        padding: 16px 4px; }
+      body header .sidebar #tg1:checked ~ .ts1 {
+        display: block;
+        position: relative;
+        height: auto; }
+      body header .sidebar #tg2:checked ~ .ts2 {
+        display: block;
+        position: relative;
+        height: auto; }
+      body header .sidebar #tg3:checked ~ .ts3 {
+        display: block;
+        position: relative;
+        height: auto; }
 
 /*# sourceMappingURL=main.css.map */
