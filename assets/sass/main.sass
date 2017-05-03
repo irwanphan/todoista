@@ -110,6 +110,7 @@ body
 			color: $white
 			height: 44px
 			display: table
+			top: 0
 			.logo
 				@include squareicon(44px)
 				position: absolute
@@ -145,6 +146,15 @@ body
 					color: rgba(255,255,255,0.5)
 			nav
 				.nav-icon
-					@include squareicon(43px)
+					@include squareicon(44px)
 					display: inline-block
-	
+
+		.sidebar
+			width: 300px
+			margin-top: 44px
+			padding: 32px 0 0 4px
+			.plan-nav
+				font-size: 16px
+				.menu-icon
+					@include squareicon(44px)
+					display: inline-block

@@ -84,7 +84,8 @@ body {
       width: 100%;
       color: #fff;
       height: 44px;
-      display: table; }
+      display: table;
+      top: 0; }
       body header .topbar .logo {
         width: 44px;
         height: 44px;
@@ -122,10 +123,22 @@ body {
           left: 8px;
           color: rgba(255, 255, 255, 0.5); }
       body header .topbar nav .nav-icon {
-        width: 43px;
-        height: 43px;
-        line-height: 43px;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
         text-align: center;
         display: inline-block; }
+    body header .sidebar {
+      width: 300px;
+      margin-top: 44px;
+      padding: 32px 0 0 4px; }
+      body header .sidebar .plan-nav {
+        font-size: 16px; }
+        body header .sidebar .plan-nav .menu-icon {
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          text-align: center;
+          display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */
