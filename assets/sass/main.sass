@@ -159,6 +159,13 @@ body
 				.menu-icon
 					@include squareicon(44px)
 					display: inline-block
+				// 
+				li a
+					display: block
+					width: 100%
+					&:hover
+						background-color: lighten($white-min, 5%)
+						text-decoration: none
 			.task-nav
 				margin: 0 auto
 				.task-group
@@ -167,6 +174,7 @@ body
 					text-align: center
 					font-weight: normal
 					display: inline-block
+					line-height: 32px
 					width: 33%
 					margin-right: -4px
 					border-bottom: 1px solid $grey-light
@@ -183,6 +191,35 @@ body
 				display: none
 				height: 1px
 				padding: 16px 4px
+				.group-icon
+					&:before
+						font-family: "FontAwesome"
+						display: inline-block
+						color: $grey-light
+						font-style: normal
+						@include squareicon(44px)
+					&.round:before
+						content: "\f111"
+					&.tint:before
+						content: "\f043"
+					&.tag:before
+						content: "\f02b"
+					&.blue:before
+						color: $blue-tweet
+					&.red:before
+						color: $red
+					&.orange:before
+						color: $orange-lite
+					&.green
+						color: $green
+				// 
+				li a
+					display: block
+					width: 100%
+					&:hover
+						background-color: lighten($white-min, 5%)
+						text-decoration: none
+
 			@for $i from 1 through 3
 				#tg#{$i}:checked ~ .ts#{$i}
 					display: block

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* todoist clone
  * crafted(c) 2017 @IrwanPhan
  *
@@ -141,6 +142,12 @@ body {
           line-height: 44px;
           text-align: center;
           display: inline-block; }
+        body header .sidebar .plan-nav li a {
+          display: block;
+          width: 100%; }
+          body header .sidebar .plan-nav li a:hover {
+            background-color: white;
+            text-decoration: none; }
       body header .sidebar .task-nav {
         margin: 0 auto; }
         body header .sidebar .task-nav .task-group {
@@ -153,6 +160,7 @@ body {
           text-align: center;
           font-weight: normal;
           display: inline-block;
+          line-height: 32px;
           width: 33%;
           margin-right: -4px;
           border-bottom: 1px solid #dedede; }
@@ -173,6 +181,35 @@ body {
         display: none;
         height: 1px;
         padding: 16px 4px; }
+        body header .sidebar .task-section .group-icon:before {
+          font-family: "FontAwesome";
+          display: inline-block;
+          color: #dedede;
+          font-style: normal;
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          text-align: center; }
+        body header .sidebar .task-section .group-icon.round:before {
+          content: ""; }
+        body header .sidebar .task-section .group-icon.tint:before {
+          content: ""; }
+        body header .sidebar .task-section .group-icon.tag:before {
+          content: ""; }
+        body header .sidebar .task-section .group-icon.blue:before {
+          color: #44a0f8; }
+        body header .sidebar .task-section .group-icon.red:before {
+          color: #d62323; }
+        body header .sidebar .task-section .group-icon.orange:before {
+          color: #f9dc85; }
+        body header .sidebar .task-section .group-icon.green {
+          color: #11b622; }
+        body header .sidebar .task-section li a {
+          display: block;
+          width: 100%; }
+          body header .sidebar .task-section li a:hover {
+            background-color: white;
+            text-decoration: none; }
       body header .sidebar #tg1:checked ~ .ts1 {
         display: block;
         position: relative;
