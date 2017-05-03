@@ -1,0 +1,131 @@
+/* todoist clone
+ * crafted(c) 2017 @IrwanPhan
+ *
+ */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "segoe UI", "open sans", arial, sans-serif; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+  a:hover, a:active, a:focus, a:visited {
+    color: inherit; }
+  a.round-button {
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: block;
+    background-color: #fafafa; }
+
+ul {
+  list-style: none;
+  padding-left: 0; }
+
+ul, li, a, input, input ~ label, button {
+  transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease; }
+
+input[type="radio"], input[type="checkbox"], a {
+  cursor: pointer; }
+  input[type="radio"] ~ label, input[type="checkbox"] ~ label, a ~ label {
+    cursor: pointer; }
+
+.hidden {
+  visibility: hidden;
+  display: none; }
+
+.clear {
+  content: "";
+  display: block;
+  clear: both; }
+
+.right {
+  float: right; }
+
+.container-fluid {
+  width: 100%; }
+
+.container {
+  max-width: 1020px;
+  margin: 0px auto; }
+
+.button {
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  text-align: center;
+  display: block;
+  border: 1px solid white; }
+  .button.theme {
+    color: #fff;
+    background-color: #e3746a; }
+    .button.theme:hover {
+      color: #db4c3f;
+      background-color: #efb0aa; }
+
+body {
+  background-color: #fafafa; }
+  body header {
+    position: relative; }
+    body header .topbar {
+      background-color: #db4c3f;
+      position: fixed;
+      width: 100%;
+      color: #fff;
+      height: 44px;
+      display: table; }
+      body header .topbar .logo {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        position: absolute;
+        left: 4px;
+        font-size: 24px; }
+      body header .topbar .search {
+        position: absolute;
+        left: 330px;
+        right: 6px;
+        line-height: 44px; }
+        body header .topbar .search input[type="text"] {
+          background-color: transparent;
+          position: relative;
+          border: 0;
+          border-radius: 4px;
+          outline: 0 none;
+          height: 30px;
+          width: 300px;
+          padding-left: 32px;
+          z-index: 2; }
+          body header .topbar .search input[type="text"]:hover, body header .topbar .search input[type="text"]:focus, body header .topbar .search input[type="text"]:active {
+            color: #2e2e2e;
+            background-color: #fff;
+            width: 100%; }
+            body header .topbar .search input[type="text"]:hover ~ i.icon, body header .topbar .search input[type="text"]:focus ~ i.icon, body header .topbar .search input[type="text"]:active ~ i.icon {
+              color: #888;
+              z-index: 3; }
+        body header .topbar .search i.icon {
+          position: absolute;
+          z-index: 1;
+          line-height: 44px;
+          left: 8px;
+          color: rgba(255, 255, 255, 0.5); }
+      body header .topbar nav .nav-icon {
+        width: 43px;
+        height: 43px;
+        line-height: 43px;
+        text-align: center;
+        display: inline-block; }
+
+/*# sourceMappingURL=main.css.map */

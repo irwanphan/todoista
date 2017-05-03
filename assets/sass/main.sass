@@ -1,0 +1,150 @@
+/*
+ * todoist clone
+ * crafted(c) 2017 @IrwanPhan
+ *
+ */ 
+
+// transitions & styling
+$browsers: '', '-o-', '-ms-', '-moz-', '-webkit-'
+@mixin transitions ($sec)
+	@each $browser in $browsers
+		#{$browser}transition: all $sec ease
+@mixin borderradius ($radius: 50%)
+	@each $browser in $browsers
+		#{$browser}border-radius: $radius
+@mixin squareicon ($size)
+	width: $size
+	height: $size
+	line-height: $size
+	text-align: center
+@mixin clearfix
+	content: ""
+	display: block
+	clear: both
+// set base container
+// responsive setting
+$responsive: true
+@mixin container($container-width: $width)
+	// set container width if responsive, else if not
+	@if $responsive == true
+		max-width: $container-width
+	@else
+		width: $container-width
+	margin: 0px auto
+
+// colors
+$black: #000
+$white: #fff
+$white-min: #fafafa
+$grey-light: #dedede
+$grey: #888
+$grey-dark: #2e2e2e
+$orange: #da5f00
+$orange-lite: #f9dc85
+$navy-lite: #a1decb
+$green: #11b622
+$blue: #466ab2
+$blue-tweet: #44a0f8
+$red: #d62323
+$maroon: #db4c3f
+
+$theme-color: $maroon
+$complementer-color: $green
+
+// default styling
+*, *:before, *:after
+	box-sizing: border-box
+html, body
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+	font-family: "segoe UI", "open sans", arial, sans-serif
+a
+	text-decoration: none
+	color: inherit
+	&:hover, &:active, &:focus, &:visited
+		color: inherit
+	&.round-button
+		@include borderradius(50%)
+		display: block
+		background-color: $white-min
+ul
+	list-style: none
+	padding-left: 0
+ul, li, a, input, input ~ label, button
+	@include transitions(.3s)
+input[type="radio"], input[type="checkbox"], a
+	cursor: pointer
+	& ~ label
+		cursor: pointer
+.hidden
+	visibility: hidden
+	display: none
+.clear
+	@include clearfix
+.right
+	float: right
+.container-fluid
+	width: 100%
+.container
+	@include container(1020px)
+.button
+	@include borderradius(5px)
+	text-align: center
+	display: block
+	// padding: 8px
+	border: 1px solid white
+	&.theme
+		color: $white
+		background-color: lighten($theme-color, 10%)
+		&:hover
+			color: $theme-color
+			background-color: lighten($theme-color, 25%)
+
+body
+	background-color: $white-min
+	header
+		position: relative
+		.topbar
+			background-color: $theme-color
+			position: fixed
+			width: 100%
+			color: $white
+			height: 44px
+			display: table
+			.logo
+				@include squareicon(44px)
+				position: absolute
+				left: 4px
+				font-size: 24px
+			.search
+				position: absolute
+				left: 330px
+				right: 6px
+				line-height: 44px
+				input[type="text"]
+					background-color: transparent
+					position: relative
+					border: 0
+					border-radius: 4px
+					outline: 0 none
+					height: 30px
+					width: 300px
+					padding-left: 32px
+					z-index: 2
+					&:hover, &:focus, &:active
+						color: $grey-dark
+						background-color: $white
+						width: 100%
+						&~ i.icon
+							color: $grey
+							z-index: 3
+				i.icon
+					position: absolute
+					z-index: 1
+					line-height: 44px
+					left: 8px
+					color: rgba(255,255,255,0.5)
+			nav
+				.nav-icon
+					@include squareicon(43px)
+					display: inline-block
+	
