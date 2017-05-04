@@ -109,118 +109,144 @@ body {
           height: 30px;
           width: 300px;
           padding-left: 32px;
-          z-index: 2; }
+          z-index: 1; }
           body header .topbar .search input[type="text"]:hover, body header .topbar .search input[type="text"]:focus, body header .topbar .search input[type="text"]:active {
             color: #2e2e2e;
             background-color: #fff;
-            width: 100%; }
+            width: 100%;
+            z-index: 3; }
             body header .topbar .search input[type="text"]:hover ~ i.icon, body header .topbar .search input[type="text"]:focus ~ i.icon, body header .topbar .search input[type="text"]:active ~ i.icon {
               color: #888;
-              z-index: 3; }
+              z-index: 4; }
         body header .topbar .search i.icon {
           position: absolute;
           z-index: 1;
           line-height: 44px;
           left: 8px;
           color: rgba(255, 255, 255, 0.5); }
-      body header .topbar nav .nav-icon {
-        width: 44px;
-        height: 44px;
-        line-height: 44px;
-        text-align: center;
-        display: inline-block; }
-    body header .sidebar {
-      width: 300px;
-      margin-top: 44px;
-      padding-top: 32px; }
-      body header .sidebar .plan-nav {
-        font-size: 16px;
-        padding-left: 4px; }
-        body header .sidebar .plan-nav .menu-icon {
+      body header .topbar nav {
+        z-index: 2; }
+        body header .topbar nav .nav-icon {
           width: 44px;
           height: 44px;
           line-height: 44px;
           text-align: center;
           display: inline-block; }
-        body header .sidebar .plan-nav li a {
-          display: block;
-          width: 100%; }
-          body header .sidebar .plan-nav li a:hover {
-            background-color: white;
-            text-decoration: none; }
-      body header .sidebar .task-nav {
-        margin: 0 auto; }
-        body header .sidebar .task-nav .task-group {
-          transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          -ms-transition: all 0.3s ease;
-          -moz-transition: all 0.3s ease;
-          -webkit-transition: all 0.3s ease;
-          font-size: 14px;
-          text-align: center;
-          font-weight: normal;
-          display: inline-block;
-          line-height: 32px;
-          width: 33%;
-          margin-right: -4px;
-          border-bottom: 1px solid #dedede; }
-          body header .sidebar .task-nav .task-group:last-child {
-            margin-right: 0; }
-          body header .sidebar .task-nav .task-group:hover, body header .sidebar .task-nav .task-group:active, body header .sidebar .task-nav .task-group:focus {
-            border-color: #888; }
-        body header .sidebar .task-nav .task-radio {
-          display: none; }
-        body header .sidebar .task-nav .task-radio:checked + label {
-          border-color: #888; }
-      body header .sidebar .task-section {
+  body .sidebar {
+    width: 300px;
+    position: fixed;
+    overflow-y: auto;
+    top: 44px;
+    bottom: 0;
+    left: 0; }
+    body .sidebar .plan-nav {
+      font-size: 16px;
+      padding-left: 4px;
+      padding-top: 32px; }
+      body .sidebar .plan-nav .menu-icon {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        display: inline-block; }
+      body .sidebar .plan-nav li a {
+        display: block;
+        width: 100%; }
+        body .sidebar .plan-nav li a:hover {
+          background-color: white;
+          text-decoration: none; }
+    body .sidebar .task-nav {
+      margin: 0 auto; }
+      body .sidebar .task-nav .task-group {
         transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
         -ms-transition: all 0.3s ease;
         -moz-transition: all 0.3s ease;
         -webkit-transition: all 0.3s ease;
-        display: none;
-        height: 1px;
-        padding: 16px 4px; }
-        body header .sidebar .task-section .group-icon:before {
-          font-family: "FontAwesome";
-          display: inline-block;
+        font-size: 14px;
+        text-align: center;
+        font-weight: normal;
+        display: inline-block;
+        line-height: 32px;
+        width: 33%;
+        margin-right: -4px;
+        border-bottom: 1px solid #dedede; }
+        body .sidebar .task-nav .task-group:last-child {
+          margin-right: 0; }
+        body .sidebar .task-nav .task-group:hover, body .sidebar .task-nav .task-group:active, body .sidebar .task-nav .task-group:focus {
+          border-color: #888; }
+      body .sidebar .task-nav .task-radio {
+        display: none; }
+      body .sidebar .task-nav .task-radio:checked + label {
+        border-color: #888; }
+    body .sidebar .task-section {
+      transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      display: none;
+      height: 1px;
+      padding: 16px 4px; }
+      body .sidebar .task-section .group-icon:before {
+        font-family: "FontAwesome";
+        display: inline-block;
+        color: #dedede;
+        font-style: normal;
+        font-size: 18px;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center; }
+      body .sidebar .task-section .group-icon.round:before {
+        content: ""; }
+      body .sidebar .task-section .group-icon.tint:before {
+        content: ""; }
+      body .sidebar .task-section .group-icon.tag:before {
+        content: ""; }
+      body .sidebar .task-section .group-icon.blue:before {
+        color: #44a0f8; }
+      body .sidebar .task-section .group-icon.red:before {
+        color: #d62323; }
+      body .sidebar .task-section .group-icon.orange:before {
+        color: #f9dc85; }
+      body .sidebar .task-section .group-icon.green {
+        color: #11b622; }
+      body .sidebar .task-section li a {
+        display: block;
+        width: 100%; }
+        body .sidebar .task-section li a:hover {
+          background-color: white;
+          text-decoration: none; }
+    body .sidebar #tg1:checked ~ .ts1 {
+      display: block;
+      position: relative;
+      height: auto; }
+    body .sidebar #tg2:checked ~ .ts2 {
+      display: block;
+      position: relative;
+      height: auto; }
+    body .sidebar #tg3:checked ~ .ts3 {
+      display: block;
+      position: relative;
+      height: auto; }
+  body .content-wrap {
+    height: 100vh;
+    width: 100%;
+    padding-top: 44px;
+    padding-left: 300px; }
+    body .content-wrap .content {
+      background-color: #fff;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 36px; }
+      body .content-wrap .content .title-bar {
+        font-size: 18px; }
+        body .content-wrap .content .title-bar .nav-icon {
           color: #dedede;
-          font-style: normal;
-          width: 44px;
-          height: 44px;
-          line-height: 44px;
-          text-align: center; }
-        body header .sidebar .task-section .group-icon.round:before {
-          content: ""; }
-        body header .sidebar .task-section .group-icon.tint:before {
-          content: ""; }
-        body header .sidebar .task-section .group-icon.tag:before {
-          content: ""; }
-        body header .sidebar .task-section .group-icon.blue:before {
-          color: #44a0f8; }
-        body header .sidebar .task-section .group-icon.red:before {
-          color: #d62323; }
-        body header .sidebar .task-section .group-icon.orange:before {
-          color: #f9dc85; }
-        body header .sidebar .task-section .group-icon.green {
-          color: #11b622; }
-        body header .sidebar .task-section li a {
-          display: block;
-          width: 100%; }
-          body header .sidebar .task-section li a:hover {
-            background-color: white;
-            text-decoration: none; }
-      body header .sidebar #tg1:checked ~ .ts1 {
-        display: block;
-        position: relative;
-        height: auto; }
-      body header .sidebar #tg2:checked ~ .ts2 {
-        display: block;
-        position: relative;
-        height: auto; }
-      body header .sidebar #tg3:checked ~ .ts3 {
-        display: block;
-        position: relative;
-        height: auto; }
+          margin-left: 16px; }
+          body .content-wrap .content .title-bar .nav-icon:hover, body .content-wrap .content .title-bar .nav-icon:active, body .content-wrap .content .title-bar .nav-icon:focus {
+            color: #2e2e2e; }
 
 /*# sourceMappingURL=main.css.map */

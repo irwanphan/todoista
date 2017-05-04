@@ -130,14 +130,15 @@ body
 					height: 30px
 					width: 300px
 					padding-left: 32px
-					z-index: 2
+					z-index: 1
 					&:hover, &:focus, &:active
 						color: $grey-dark
 						background-color: $white
 						width: 100%
+						z-index: 3
 						&~ i.icon
 							color: $grey
-							z-index: 3
+							z-index: 4
 				i.icon
 					position: absolute
 					z-index: 1
@@ -145,84 +146,107 @@ body
 					left: 8px
 					color: rgba(255,255,255,0.5)
 			nav
+				z-index: 2
 				.nav-icon
 					@include squareicon(44px)
 					display: inline-block
 
-		.sidebar
-			width: 300px
-			margin-top: 44px
+	.sidebar
+		width: 300px
+		position: fixed
+		overflow-y: auto
+		top: 44px
+		bottom: 0
+		left: 0
+		.plan-nav
+			font-size: 16px
+			padding-left: 4px
 			padding-top: 32px
-			.plan-nav
-				font-size: 16px
-				padding-left: 4px
-				.menu-icon
-					@include squareicon(44px)
-					display: inline-block
-				// 
-				li a
-					display: block
-					width: 100%
-					&:hover
-						background-color: lighten($white-min, 5%)
-						text-decoration: none
-			.task-nav
-				margin: 0 auto
-				.task-group
-					@include transitions(.3s)
-					font-size: 14px
-					text-align: center
-					font-weight: normal
-					display: inline-block
-					line-height: 32px
-					width: 33%
-					margin-right: -4px
-					border-bottom: 1px solid $grey-light
-					&:last-child
-						margin-right: 0
-					&:hover, &:active, &:focus
-						border-color: $grey
-				.task-radio
-					display: none
-				.task-radio:checked + label
-					border-color: $grey
-			.task-section
+			.menu-icon
+				@include squareicon(44px)
+				display: inline-block
+			// 
+			li a
+				display: block
+				width: 100%
+				&:hover
+					background-color: lighten($white-min, 5%)
+					text-decoration: none
+		.task-nav
+			margin: 0 auto
+			.task-group
 				@include transitions(.3s)
+				font-size: 14px
+				text-align: center
+				font-weight: normal
+				display: inline-block
+				line-height: 32px
+				width: 33%
+				margin-right: -4px
+				border-bottom: 1px solid $grey-light
+				&:last-child
+					margin-right: 0
+				&:hover, &:active, &:focus
+					border-color: $grey
+			.task-radio
 				display: none
-				height: 1px
-				padding: 16px 4px
-				.group-icon
-					&:before
-						font-family: "FontAwesome"
-						display: inline-block
-						color: $grey-light
-						font-style: normal
-						@include squareicon(44px)
-					&.round:before
-						content: "\f111"
-					&.tint:before
-						content: "\f043"
-					&.tag:before
-						content: "\f02b"
-					&.blue:before
-						color: $blue-tweet
-					&.red:before
-						color: $red
-					&.orange:before
-						color: $orange-lite
-					&.green
-						color: $green
-				// 
-				li a
-					display: block
-					width: 100%
-					&:hover
-						background-color: lighten($white-min, 5%)
-						text-decoration: none
+			.task-radio:checked + label
+				border-color: $grey
+		.task-section
+			@include transitions(.3s)
+			display: none
+			height: 1px
+			padding: 16px 4px
+			.group-icon
+				&:before
+					font-family: "FontAwesome"
+					display: inline-block
+					color: $grey-light
+					font-style: normal
+					font-size: 18px
+					@include squareicon(44px)
+				&.round:before
+					content: "\f111"
+				&.tint:before
+					content: "\f043"
+				&.tag:before
+					content: "\f02b"
+				&.blue:before
+					color: $blue-tweet
+				&.red:before
+					color: $red
+				&.orange:before
+					color: $orange-lite
+				&.green
+					color: $green
+			// 
+			li a
+				display: block
+				width: 100%
+				&:hover
+					background-color: lighten($white-min, 5%)
+					text-decoration: none
+		@for $i from 1 through 3
+			#tg#{$i}:checked ~ .ts#{$i}
+				display: block
+				position: relative
+				height: auto
 
-			@for $i from 1 through 3
-				#tg#{$i}:checked ~ .ts#{$i}
-					display: block
-					position: relative
-					height: auto
-						
+	.content-wrap
+		height: 100vh
+		width: 100%
+		padding-top: 44px
+		padding-left: 300px
+		.content
+			background-color: $white
+			display: block
+			width: 100%
+			height: 100%
+			padding: 36px
+			.title-bar
+				font-size: 18px
+				.nav-icon
+					color: $grey-light
+					margin-left: 16px
+					&:hover, &:active, &:focus
+						color: $grey-dark
