@@ -102,7 +102,8 @@ body {
         line-height: 44px; }
         body header .topbar .search input[type="text"] {
           background-color: transparent;
-          position: relative;
+          position: absolute;
+          top: 6px;
           border: 0;
           border-radius: 4px;
           outline: 0 none;
@@ -119,19 +120,60 @@ body {
               color: #888;
               z-index: 4; }
         body header .topbar .search i.icon {
+          transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          -ms-transition: all 0.3s ease;
+          -moz-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
           position: absolute;
-          z-index: 1;
+          z-index: 2;
           line-height: 44px;
           left: 8px;
           color: rgba(255, 255, 255, 0.5); }
-      body header .topbar nav {
-        z-index: 2; }
-        body header .topbar nav .nav-icon {
-          width: 44px;
-          height: 44px;
-          line-height: 44px;
-          text-align: center;
-          display: inline-block; }
+    body header .topnav-menu {
+      color: #fff;
+      z-index: 8;
+      position: absolute;
+      right: 6px; }
+      body header .topnav-menu .nav-icon {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        display: inline-block; }
+    body header .popdown {
+      color: #888;
+      display: none;
+      padding: 16px;
+      right: 6px;
+      width: 300px;
+      z-index: 8;
+      transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease; }
+      body header .popdown.show {
+        display: block;
+        position: absolute;
+        top: 44px;
+        background-color: #fff;
+        border: 1px solid #dedede;
+        border-radius: 3px;
+        -o-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px; }
+    body header .screenout {
+      display: none;
+      z-index: 7; }
+      body header .screenout.show {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        position: fixed; }
   body .sidebar {
     width: 300px;
     position: fixed;

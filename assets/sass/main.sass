@@ -2,7 +2,7 @@
  * todoist clone
  * crafted(c) 2017 @IrwanPhan
  *
- */ 
+ */
 
 // transitions & styling
 $browsers: '', '-o-', '-ms-', '-moz-', '-webkit-'
@@ -123,7 +123,8 @@ body
 				line-height: 44px
 				input[type="text"]
 					background-color: transparent
-					position: relative
+					position: absolute
+					top: 6px
 					border: 0
 					border-radius: 4px
 					outline: 0 none
@@ -140,16 +141,45 @@ body
 							color: $grey
 							z-index: 4
 				i.icon
+					@include transitions(.3s)
 					position: absolute
-					z-index: 1
+					z-index: 2
 					line-height: 44px
 					left: 8px
 					color: rgba(255,255,255,0.5)
-			nav
-				z-index: 2
-				.nav-icon
-					@include squareicon(44px)
-					display: inline-block
+		.topnav-menu
+			color: $white
+			z-index: 8
+			position: absolute
+			right: 6px
+			.nav-icon
+				@include squareicon(44px)
+				display: inline-block
+		.popdown
+			color: $grey
+			display: none
+			padding: 16px
+			right: 6px
+			width: 300px
+			z-index: 8
+			@include transitions(.3s)
+			&.show
+				display: block
+				position: absolute
+				top: 44px
+				background-color: $white
+				border: 1px solid $grey-light
+				@include borderradius(3px)
+		.screenout
+			display: none
+			z-index: 7
+			&.show
+				top: 0
+				bottom: 0
+				right: 0
+				left: 0
+				display: block
+				position: fixed
 
 	.sidebar
 		width: 300px

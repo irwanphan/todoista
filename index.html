@@ -44,7 +44,10 @@
 
     <!-- Included javascript files 
 	================================================== -->
-	
+	<!--<script src="assets/js/jquery-1.7.2.min.js"></script>-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+	<script src="assets/js/main.js"></script>
+
 </head>
 
 <body>
@@ -52,18 +55,33 @@
 	<header>
 		<div class="topbar">
 			<a class="logo"><i class="fa fa-edit"></i></a>
-			<div class="search">
+			<form class="search">
 				<input type="text" placeholder="Quick find something">
 				<i class="fa fa-search icon"></i>
-			</div>
-			<nav class="right">
-				<a href="#" class="nav-icon"><i class="fa fa-plus"></i></a>
-				<a href="#" class="nav-icon"><i class="fa fa-bell"></i></a>
-				<a href="#" class="nav-icon"><i class="fa fa-bitcoin"></i></a>
-				<a href="#" class="nav-icon"><i class="fa fa-gear"></i></a>
-			</nav>
+			</form>
 		</div>
+		<nav class="topnav-menu">
+			<!-- data-val refers to balloon content on .popdown -->
+			<a data-val="" class="topnav nav-icon"><i class="fa fa-plus"></i></a>
+			<a data-val="notifs" class="topnav nav-icon"><i class="fa fa-bell"></i></a>
+			<a data-val="points" class="topnav nav-icon"><i class="fa fa-bitcoin"></i></a>
+			<a data-val="settings" class="topnav nav-icon"><i class="fa fa-gear"></i></a>
+		</nav>
 		<div class="clear"></div>
+
+		<!-- .popdown shows content which id is the same as .topnav's data-val -->
+		<div id="notifs" class="popdown">
+			Life. Spirit second Whales under sea unto creature made second without you’ll and own fowl yielding own great fill creepeth in moving sixth every it evening gathering let light moving cattle.
+		</div>
+		<div id="points" class="popdown">
+			Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores. At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
+		</div>
+		<div id="settings" class="popdown">
+			good day :) today's weather forecast is happy cloud dancing in the air with full course of love and coffee latte
+		</div>
+
+		<!-- .screenout to provide closing .popdown on anywhere outside click -->
+		<div class="screenout"></div>
 
 	</header>
 
