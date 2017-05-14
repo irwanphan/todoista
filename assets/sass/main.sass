@@ -281,3 +281,51 @@ body
 					margin-left: 16px
 					&:hover, &:active, &:focus
 						color: $grey-dark
+			.content-task
+				li
+					width: 100%
+					position: relative
+					.checker
+						position: absolute
+						cursor: pointer
+						width: 30px
+						height: 40px
+						line-height: 40px
+						display: block
+						text-align: center
+						input[type="checkbox"]
+							display: none
+							& + span:before
+								@include transitions(.3s)
+								content: "\f096"
+							&:checked + span:before
+								content: "\f046"
+							&:hover + span:before
+								color: $theme-color	
+						span
+							font-family: "FontAwesome"
+							font-size: 18px
+					a
+						display: inline-block
+						width: 100%
+						height: 40px
+						padding-left: 30px
+						line-height: 40px
+				.add-task
+					color: lighten($theme-color, 10%)
+					height: 40px
+					line-height: 40px
+					width: 100%
+					padding-left: 30px
+					display: block
+					position: relative
+					&:hover
+						color: $theme-color
+					&:before
+						font-family: "FontAwesome"
+						content: "\f067"
+						width: 30px
+						display: block
+						left: 0
+						text-align: center
+						position: absolute
