@@ -362,11 +362,11 @@ body {
               content: ""; }
             body .content-wrap .content .content-task li .checker input[type="checkbox"]:checked + span:before {
               content: ""; }
-            body .content-wrap .content .content-task li .checker input[type="checkbox"]:hover + span:before {
-              color: #db4c3f; }
           body .content-wrap .content .content-task li .checker span {
             font-family: "FontAwesome";
             font-size: 18px; }
+            body .content-wrap .content .content-task li .checker span:hover {
+              color: #db4c3f; }
         body .content-wrap .content .content-task li a {
           display: inline-block;
           width: 100%;
