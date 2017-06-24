@@ -52,11 +52,17 @@
 
 <body>
 
+	<input type="checkbox" id="side-toggler">
+	<label for="side-toggler" class="side-toggler">
+		<i class="fa fa-calendar open"></i>
+		<i class="fa fa-chevron-left close"></i>
+	</label>
+
 	<header>
 		<div class="topbar">
 			<a class="logo"><i class="fa fa-edit"></i></a>
 			<form class="search">
-				<input type="text" placeholder="Quick find something">
+				<input type="text" placeholder="Find something ...">
 				<i class="fa fa-search icon"></i>
 			</form>
 		</div>
@@ -82,7 +88,6 @@
 
 		<!-- .screenout to provide closing .popdown on anywhere outside click -->
 		<div class="screenout"></div>
-
 	</header>
 
 	<div class="sidebar">

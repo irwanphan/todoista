@@ -101,6 +101,30 @@ input[type="radio"], input[type="checkbox"], a
 
 body
 	background-color: $white-min
+	#side-toggler
+		display: none
+		&:checked
+			&~ .side-toggler
+				.open
+					opacity: 0
+					position: absolute
+				.close
+					opacity: 1	
+			&~ .sidebar
+				left: 0
+				z-index: 9
+				width: 100%
+	.side-toggler
+		position: absolute
+		font-size: 17px
+		color: $white
+		z-index: 8
+		.open, .close
+			@include squareicon(44px)
+		.close
+			opacity: 0
+		@media(min-width: 641px)
+			display: none
 	header
 		position: relative
 		.topbar
@@ -114,11 +138,12 @@ body
 			.logo
 				@include squareicon(44px)
 				position: absolute
-				left: 4px
 				font-size: 24px
+				left: 4px
+				display: none
 			.search
 				position: absolute
-				left: 330px
+				left: 38px
 				right: 6px
 				line-height: 44px
 				input[type="text"]
@@ -147,6 +172,12 @@ body
 					line-height: 44px
 					left: 8px
 					color: rgba(255,255,255,0.5)
+			@media(min-width: 641px)
+				.logo
+					display: block
+				.search
+					left: 330px
+
 		.topnav-menu
 			color: $white
 			z-index: 8
@@ -160,7 +191,6 @@ body
 			display: none
 			padding: 16px
 			right: 6px
-			width: 300px
 			z-index: 8
 			@include transitions(.3s)
 			&.show
@@ -170,6 +200,10 @@ body
 				background-color: $white
 				border: 1px solid $grey-light
 				@include borderradius(3px)
+			@media (min-width: 641px)
+				width: 300px
+			@media (max-width: 640px)
+				left: 6px
 		.screenout
 			display: none
 			z-index: 7
@@ -182,12 +216,14 @@ body
 				position: fixed
 
 	.sidebar
-		width: 300px
+		@include transitions(.3s)
+		width: 100
 		position: fixed
 		overflow-y: auto
 		top: 44px
 		bottom: 0
-		left: 0
+		left: -100%
+		background-color: $white
 		.plan-nav
 			font-size: 16px
 			padding-left: 4px
@@ -262,12 +298,14 @@ body
 				display: block
 				position: relative
 				height: auto
+		@media(min-width: 641px)
+			width: 300px
+			left: 0
 
 	.content-wrap
 		height: 100vh
 		width: 100%
 		padding-top: 44px
-		padding-left: 300px
 		.content
 			background-color: $white
 			display: block
@@ -329,3 +367,5 @@ body
 						left: 0
 						text-align: center
 						position: absolute
+		@media(min-width: 641px)
+			padding-left: 300px
