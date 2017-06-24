@@ -138,6 +138,9 @@ body {
           width: 300px;
           padding-left: 32px;
           z-index: 1; }
+          body header .topbar .search input[type="text"]::-webkit-input-placeholder {
+            color: #fafafa;
+            opacity: 0.6; }
           body header .topbar .search input[type="text"]:hover, body header .topbar .search input[type="text"]:focus, body header .topbar .search input[type="text"]:active {
             color: #2e2e2e;
             background-color: #fff;
